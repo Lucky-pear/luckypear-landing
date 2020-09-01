@@ -8,7 +8,6 @@ import { ColorButton } from '../buttons/ColorButton';
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  position: relative;
   padding: 4rem 2rem;
 `;
 const InfoWrapper = styled.div`
