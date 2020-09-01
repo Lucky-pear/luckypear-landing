@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import images from '../../assets/images';
 import { Colors } from '../../styles/colors';
 import { FontFamily } from '../../styles/fonts';
-import { Button } from '../buttons/Button';
+import { ColorButton } from '../buttons/ColorButton';
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const Subtitle = styled.div`
   font-family: ${FontFamily.Quicksand};
   font-size: 24px;
   margin-bottom: 2rem;
-  color: ${Colors.lightGrey};
+  color: ${Colors.grey};
 `;
 const ImageWrapper = styled.div`
   flex: 1;
@@ -46,9 +46,9 @@ const About: React.FC = () => {
           We write codes to write less codes.<br />
           Focus on your code, rest will be done by us.
         </Subtitle>
-        <Button>
+        <ColorButton>
           Learn more
-        </Button>
+        </ColorButton>
       </InfoWrapper>
       <ImageWrapper>
         <Background src={images.aboutBG} />
