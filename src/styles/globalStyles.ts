@@ -18,4 +18,17 @@ export default createGlobalStyle`
     margin: 0;
     overflow-x: hidden;
   }
+
+  textarea, input { 
+    border: none;
+    outline: none; 
+    resize: none;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+    /* box-shadow: 0 0 0 30px white inset; */
+    transition: background-color 5000s ease-in-out 0s;
+  }
 `

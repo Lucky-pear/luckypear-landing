@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from '../../styles/colors';
+import { Colors, Shadows } from '../../styles/colors';
 import { FontFamily } from '../../styles/fonts';
 
 const HEADER_HEIGHT = 80;
@@ -11,7 +11,10 @@ const HeightManager = styled.div`
   height: ${HEADER_HEIGHT}px !important;
 `;
 const ContentWrapper = styled.header`
-  position: absolute;
+  position: fixed;
+  z-index: 100;
+  background-color: ${Colors.white};
+  /* box-shadow: ${Shadows.underShadow}; */
   height: ${HEADER_HEIGHT}px !important;
   left: 0px !important;
   width: 100% !important;
