@@ -4,15 +4,13 @@ import styled from 'styled-components'
 import { Colors } from '../../styles/colors';
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
+  link?: string,
   onClick?: React.MouseEventHandler<Element>
 }
 
-const Container = styled.div`
+const Wrapper = styled.div`
   cursor: pointer;
-  background-color: ${Colors.primary};
-  color: ${Colors.white};
-  padding: 1rem 2rem;
-  width: fit-content;
+  color: ${Colors.primary};
 `;
 
 export const Button: React.FC<ButtonProps> = (props) => {
@@ -21,15 +19,17 @@ export const Button: React.FC<ButtonProps> = (props) => {
       e.preventDefault();
       e.stopPropagation();
       props.onClick(e);
+    } else if(props.link) {
+      window.open(props.link);
     }
   }
 
   return (
-    <Container
+    <Wrapper
       {...props}
       onClick={_onClick}
     >
       {props.children}
-    </Container>
+    </Wrapper>
   )
 }
