@@ -3,20 +3,16 @@ import styled from 'styled-components';
 import { Colors } from '../../styles/colors';
 import { FontFamily } from '../../styles/fonts';
 
-const Header: React.FC = () => {
-  return (
-    <Wrapper>
-      <Icon />
-      <Title>
-        LUCKY PEAR
-      </Title>
-    </Wrapper>
-  );
-}
+const HEADER_HEIGHT = 80;
 
-const Wrapper = styled.header`
+const Wrapper = styled.div`
+`;
+const HeightManager = styled.div`
+  height: ${HEADER_HEIGHT}px !important;
+`;
+const ContentWrapper = styled.header`
   position: absolute;
-  height: 80px !important;
+  height: ${HEADER_HEIGHT}px !important;
   left: 0px !important;
   width: 100% !important;
   display: flex;
@@ -34,5 +30,19 @@ const Title = styled.div`
   color: ${Colors.primary};
   margin-left: 0.5rem;
 `;
+
+const Header: React.FC = () => {
+  return (
+    <Wrapper>
+      <ContentWrapper>
+        <Icon />
+        <Title>
+          LUCKY PEAR
+        </Title>
+      </ContentWrapper>
+      <HeightManager />
+    </Wrapper>
+  );
+}
 
 export default Header;

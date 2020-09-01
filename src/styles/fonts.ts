@@ -1,4 +1,5 @@
 export enum FontFamily {
   Roboto = 'Roboto',
-  Axis = 'Axis'
+  Axis = 'Axis',
+  Quicksand = 'Quicksand'
 }
