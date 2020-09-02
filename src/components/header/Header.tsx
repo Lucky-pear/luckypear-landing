@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Colors, Shadows } from '../../styles/colors';
 import { FontFamily } from '../../styles/fonts';
 import { Link } from 'react-router-dom';
+import images from '../../assets/images';
 
 const HEADER_HEIGHT = 80;
 
@@ -26,7 +27,6 @@ const ContentWrapper = styled.header`
 const Icon = styled.img`
   width: 40px;
   height: 40px;
-  background-color: ${Colors.primary};
 `;
 const Title = styled.div`
   font-family: ${FontFamily.Axis};
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
     <Wrapper>
       <Link to="/">
         <ContentWrapper>
-          <Icon />
+          <Icon src={images.logo} />
           <Title>
             LUCKY PEAR
           </Title>
