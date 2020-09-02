@@ -1,8 +1,8 @@
 import React from 'react';
-import About from '../sections/About';
+import About from '../components/sections/main/About';
 import styled from 'styled-components';
-import WorksContainer from '../sections/WorksContainer';
-import Contact from '../sections/Contact';
+import WorksContainer from '../components/sections/main/WorksContainer';
+import Contact from '../components/sections/main/Contact';
 
 const Wrapper = styled.main`
 `;

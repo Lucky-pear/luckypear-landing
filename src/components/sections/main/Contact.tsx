@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontFamily } from '../../styles/fonts';
-import { Colors } from '../../styles/colors';
-import images from '../../assets/images';
-import { ContactForm } from '../form/ContactForm';
+import { FontFamily } from '../../../styles/fonts';
+import { Colors } from '../../../styles/colors';
+import images from '../../../assets/images';
+import { ContactForm } from '../../form/ContactForm';
 
 const Wrapper = styled.div`
   display: flex;
   padding: 4rem 2rem;
+  padding-bottom: 8rem;
 `;
 const Title = styled.div`
   font-family: ${FontFamily.Axis};
@@ -49,7 +50,7 @@ const Contact: React.FC = () => {
             or... do you want us to walk your dog?<br />
             Feel free for asking everything!
           </Subtitle>
-        <Background src={images.contactBG} />
+        <Background src={images.mainContactBG} />
       </LeftWrapper>
       <FormWrapper>
         <ContactForm />

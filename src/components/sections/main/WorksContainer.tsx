@@ -1,6 +1,6 @@
 import React from 'react';
 import Works from './Works';
-import { WorkType } from '../../@types/typed';
+import { WorkType } from '../../../@types/typed';
 
 const works: WorkType[] = [
   {

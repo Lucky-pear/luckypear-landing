@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import images from '../../assets/images';
-import { Colors } from '../../styles/colors';
-import { FontFamily } from '../../styles/fonts';
-import { ColorButton } from '../buttons/ColorButton';
+import images from '../../../assets/images';
+import { Colors } from '../../../styles/colors';
+import { FontFamily } from '../../../styles/fonts';
+import { ColorButton } from '../../buttons/ColorButton';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: flex;
@@ -45,12 +46,14 @@ const About: React.FC = () => {
           We write codes to write less codes.<br />
           Focus on your code, rest will be done by us.
         </Subtitle>
-        <ColorButton>
-          Learn more
-        </ColorButton>
+        <Link to="/about">
+          <ColorButton>
+            Learn more
+          </ColorButton>
+        </Link>
       </InfoWrapper>
       <ImageWrapper>
-        <Background src={images.aboutBG} />
+        <Background src={images.mainAboutBG} />
       </ImageWrapper>
     </Wrapper>
   );

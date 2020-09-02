@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontFamily } from '../../styles/fonts';
-import { Colors } from '../../styles/colors';
-import WorkCard from '../cards/WorkCard';
-import { WorkType } from '../../@types/typed';
+import { FontFamily } from '../../../styles/fonts';
+import { Colors } from '../../../styles/colors';
+import WorkCard from '../../cards/WorkCard';
+import { WorkType } from '../../../@types/typed';
 
 const Wrapper = styled.div`
   display: flex;
