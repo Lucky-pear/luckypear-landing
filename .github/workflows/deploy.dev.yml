@@ -1,4 +1,4 @@
-name: React build and deploy(live)
+name: React build and deploy(dev)
 on:
   push:
     branches:
