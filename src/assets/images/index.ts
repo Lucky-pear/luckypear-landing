@@ -1,5 +1,5 @@
 const images = {
-  logo: require("./logo.svg"),
+  iconLogo: require("./icons/logo.svg"),
 
   mainAboutBG: require("./main/about.png"),
   mainContactBG: require("./main/contact.png"),

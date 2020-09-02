@@ -40,7 +40,7 @@ const Header: React.FC = () => {
     <Wrapper>
       <Link to="/">
         <ContentWrapper>
-          <Icon src={images.logo} />
+          <Icon src={images.iconLogo} />
           <Title>
             LUCKY PEAR
           </Title>

@@ -12,15 +12,20 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+const MainWrapper = styled.div`
+  width: 100%;
+`;
 
 const App = () => {
   return (
     <Wrapper>
       <Header />
-      <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/" component={Main} />
-      </Switch>
+      <MainWrapper>
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/" component={Main} />
+        </Switch>
+      </MainWrapper>
       <Footer />
     </Wrapper>
   );

@@ -5,7 +5,6 @@ import WorksContainer from '../components/sections/main/WorksContainer';
 import Contact from '../components/sections/main/Contact';
 
 const Wrapper = styled.main`
-  width: 100%;
 `;
 
 const Main: React.FC = () => {

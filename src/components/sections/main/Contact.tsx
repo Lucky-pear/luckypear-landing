@@ -8,6 +8,7 @@ import { ContactForm } from '../../form/ContactForm';
 const Wrapper = styled.div`
   display: flex;
   padding: 4rem 2rem;
+  padding-bottom: 8rem;
 `;
 const Title = styled.div`
   font-family: ${FontFamily.Axis};

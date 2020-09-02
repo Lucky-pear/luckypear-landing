@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
+  padding-bottom: 0rem;
   text-align: center;
 `;
 const InfoWrapper = styled.div`
@@ -29,10 +30,8 @@ const Description = styled.div`
 const Heading = styled(Title)`
   font-size: 36px;
 `;
-const ImageWrapper = styled.div`
-`;
 const Background = styled.img`
-  width: 80%;
+  width: 60%;
 `;
 
 const Misson: React.FC = () => {
@@ -59,9 +58,7 @@ const Misson: React.FC = () => {
           People who focuses on writing SOLID codes to increases code reusability. People who has this kind of personality are what we call Lazy developer.
         </Description>
       </InfoWrapper>
-      <ImageWrapper>
-        <Background src={images.aboutBG} />
-      </ImageWrapper>
+      <Background src={images.aboutBG} />
     </Wrapper>
   );
 }
