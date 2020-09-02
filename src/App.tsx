@@ -1,8 +1,10 @@
 import React from 'react';
-import Header from './components/header/Header';
-import Main from './components/main/Main';
 import styled from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import About from './routes/About';
+import Main from './routes/Main';
 
 const Wrapper = styled.div`
   height: 100vh !important;
@@ -15,7 +17,10 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
-      <Main />
+      <Switch>
+        <Route path="/about" component={About} />
+        <Route path="/" component={Main} />
+      </Switch>
       <Footer />
     </Wrapper>
   );

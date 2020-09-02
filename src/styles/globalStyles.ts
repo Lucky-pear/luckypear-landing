@@ -31,4 +31,8 @@ export default createGlobalStyle`
     /* box-shadow: 0 0 0 30px white inset; */
     transition: background-color 5000s ease-in-out 0s;
   }
+
+  a {
+    text-decoration: none;
+  }
 `
