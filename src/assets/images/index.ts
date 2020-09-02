@@ -1,5 +1,7 @@
 const images = {
-  aboutBG: require("./main/about.png"),
-  contactBG: require("./main/contact.png"),
+  mainAboutBG: require("./main/about.png"),
+  mainContactBG: require("./main/contact.png"),
+
+  aboutBG: require("./about/bg.png"),
 }
 export default images;

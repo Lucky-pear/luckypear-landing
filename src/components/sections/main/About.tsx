@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import images from '../../assets/images';
-import { Colors } from '../../styles/colors';
-import { FontFamily } from '../../styles/fonts';
-import { ColorButton } from '../buttons/ColorButton';
+import images from '../../../assets/images';
+import { Colors } from '../../../styles/colors';
+import { FontFamily } from '../../../styles/fonts';
+import { ColorButton } from '../../buttons/ColorButton';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
@@ -53,7 +53,7 @@ const About: React.FC = () => {
         </Link>
       </InfoWrapper>
       <ImageWrapper>
-        <Background src={images.aboutBG} />
+        <Background src={images.mainAboutBG} />
       </ImageWrapper>
     </Wrapper>
   );

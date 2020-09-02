@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors, Shadows } from '../../styles/colors';
 import { FontFamily } from '../../styles/fonts';
+import { Link } from 'react-router-dom';
 
 const HEADER_HEIGHT = 80;
 
@@ -37,12 +38,14 @@ const Title = styled.div`
 const Header: React.FC = () => {
   return (
     <Wrapper>
-      <ContentWrapper>
-        <Icon />
-        <Title>
-          LUCKY PEAR
-        </Title>
-      </ContentWrapper>
+      <Link to="/">
+        <ContentWrapper>
+          <Icon />
+          <Title>
+            LUCKY PEAR
+          </Title>
+        </ContentWrapper>
+      </Link>
       <HeightManager />
     </Wrapper>
   );
