@@ -1,12 +1,18 @@
 
-import React from 'react';
+import React, { useState, FormEventHandler } from 'react';
 import styled from 'styled-components'
 import { FormInput } from './FormInput';
-import { emailRules } from '../../utils/rules';
+import { emailRule, fillInputRule } from '../../utils/rules';
 import { ColorButton } from '../buttons/ColorButton';
 
-export interface FormProps {
-  onSubmit?: () => void,
+export type ContactType = {
+  name: string,
+  email: string,
+  content: string,
+}
+
+export interface ContactFormProps {
+  onSubmit: (data: ContactType) => void,
 }
 
 const Wrapper = styled.form`
@@ -18,21 +24,56 @@ const ButtonWrapper = styled.div`
   margin-top: 1rem;
 `;
 
-export const ContactForm: React.FC<FormProps> = (props) => {
+export const ContactForm: React.FC<ContactFormProps> = (props) => {
   const {
     onSubmit
   } = props;
+  const [contactData, setContactData] = useState<ContactType>({
+    name: '',
+    email: '',
+    content: ''
+  });
+
+  const _onChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setContactData({
+      ...contactData,
+      [e.currentTarget.id]: e.currentTarget.value
+    });
+  };
+
+  const _onSubmit = () => {
+    if (onSubmit)
+      onSubmit(contactData);
+  }
 
   return (
-    <Wrapper
-      {...props}
-      onSubmit={onSubmit}
-    >
-      <FormInput placeholder="Name"/>
-      <FormInput placeholder="Email" rule={emailRules}/>
-      <FormInput placeholder="Feel free to write anything!" multiline/>
+    <Wrapper {...props} onSubmit={undefined}>
+      <FormInput
+        id="name"
+        placeholder="Name"
+        value={contactData.name}
+        onChange={_onChange}
+        rule={fillInputRule}
+      />
+      <FormInput
+        id="email"
+        placeholder="Email"
+        value={contactData.email}
+        onChange={_onChange}
+        rule={emailRule}
+      />
+      <FormInput
+        multiline
+        id="content"
+        placeholder="Feel free to write anything!"
+        value={contactData.content}
+        onChange={_onChange}
+        rule={fillInputRule}
+      />
       <ButtonWrapper>
-        <ColorButton>
+        <ColorButton
+          onClick={_onSubmit}
+        >
           Send
         </ColorButton>
       </ButtonWrapper>
