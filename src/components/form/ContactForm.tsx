@@ -1,5 +1,5 @@
 
-import React, { useState, FormEventHandler } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import { FormInput } from './FormInput';
 import { emailRule, fillInputRule } from '../../utils/rules';
