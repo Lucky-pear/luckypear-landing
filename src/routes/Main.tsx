@@ -2,7 +2,7 @@ import React from 'react';
 import About from '../components/sections/main/About';
 import styled from 'styled-components';
 import WorksContainer from '../components/sections/main/WorksContainer';
-import Contact from '../components/sections/main/Contact';
+import ContactContainer from '../components/sections/main/ContactContainer';
 
 const Wrapper = styled.main`
 `;
@@ -12,7 +12,7 @@ const Main: React.FC = () => {
     <Wrapper>
       <About />
       <WorksContainer />
-      <Contact />
+      <ContactContainer />
     </Wrapper>
   );
 }

@@ -1,12 +1,12 @@
 const dev = {
   api: {
-    URL: "http://api.luckypear.io/"
+    URL: "http://localhost:3001"
   },
 };
 
 const prod = {
   api: {
-    URL: "http://api.luckypear.io/"
+    URL: "http://api.luckypear.io"
   }
 };
 
