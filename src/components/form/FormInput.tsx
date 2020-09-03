@@ -4,9 +4,10 @@ import styled from 'styled-components'
 import { Colors } from '../../styles/colors';
 import { RuleType } from '../../utils/rules';
 
-interface FormType extends React.HTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+interface FormInputProps extends React.HTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+  value?: string,
   multiline?: boolean,
-  rule?: (value: string) => RuleType
+  rule?: (value: string) => RuleType,
 }
 
 const Wrapper = styled.div`
@@ -32,15 +33,19 @@ const ErrorMessage = styled.div`
 `;
 
 
-export const FormInput: React.FC<FormType> = (props) => {
+export const FormInput: React.FC<FormInputProps> = (props) => {
   const {
     multiline,
     rule,
-    onChange
+    onChange,
   } = props;
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(props.value);
   const [ruleResult, setRuleResult] = useState<RuleType>({ valid: true, message: '' })
+
+  useEffect(() => {
+    setValue(props.value);
+  }, [props.value])
 
   useEffect(() => {
     if (rule && value) {
@@ -59,11 +64,13 @@ export const FormInput: React.FC<FormType> = (props) => {
       {multiline ?
         <TextArea
           {...props}
+          value={value}
           onChange={_onChange}
         />
         :
         <Input
           {...props}
+          value={value}
           onChange={_onChange}
         />
       }

@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontFamily } from '../../styles/fonts';
-import { Colors } from '../../styles/colors';
-import images from '../../assets/images';
-import { ContactForm } from '../form/ContactForm';
+import { FontFamily } from '../../../styles/fonts';
+import { Colors } from '../../../styles/colors';
+import images from '../../../assets/images';
+import { ContactForm, ContactType } from '../../form/ContactForm';
+
+export interface ContactProps {
+  onRequestSendMail: (data: ContactType) => void,
+}
 
 const Wrapper = styled.div`
   display: flex;
   padding: 4rem 2rem;
+  padding-bottom: 8rem;
 `;
 const Title = styled.div`
   font-family: ${FontFamily.Axis};
@@ -36,23 +41,25 @@ const Background = styled.img`
   padding-right: 2rem;
 `;
 
-const Contact: React.FC = () => {
+const Contact: React.FC<ContactProps> = ({
+  onRequestSendMail
+}) => {
   return (
     <Wrapper>
       <LeftWrapper>
         <Title>
-            Contact us
+          Contact us
           </Title>
-          <Subtitle>
-            Want to be our member?<br />
+        <Subtitle>
+          Want to be our member?<br />
             Want to offer us a project?<br />
             or... do you want us to walk your dog?<br />
             Feel free for asking everything!
           </Subtitle>
-        <Background src={images.contactBG} />
+        <Background src={images.mainContactBG} />
       </LeftWrapper>
       <FormWrapper>
-        <ContactForm />
+        <ContactForm onSubmit={onRequestSendMail} />
       </FormWrapper>
     </Wrapper>
   );

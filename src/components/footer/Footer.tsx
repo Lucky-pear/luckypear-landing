@@ -10,7 +10,6 @@ const Wrapper = styled.footer`
   color: ${Colors.white};
   display: flex;
   justify-content: space-between;
-  margin-top: 4rem;
 `;
 const Copyright = styled.div`
 `;
