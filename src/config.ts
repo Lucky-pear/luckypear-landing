@@ -6,7 +6,7 @@ const dev = {
 
 const prod = {
   api: {
-    URL: "http://api.luckypear.io"
+    URL: "https://api.luckypear.io"
   }
 };
 
