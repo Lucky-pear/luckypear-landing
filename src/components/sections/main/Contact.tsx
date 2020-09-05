@@ -7,6 +7,7 @@ import { ContactForm, ContactType } from '../../form/ContactForm';
 
 export interface ContactProps {
   onRequestSendMail: (data: ContactType) => void,
+  isSending?: boolean
 }
 
 const Wrapper = styled.div`
@@ -42,7 +43,8 @@ const Background = styled.img`
 `;
 
 const Contact: React.FC<ContactProps> = ({
-  onRequestSendMail
+  onRequestSendMail,
+  isSending
 }) => {
   return (
     <Wrapper>
@@ -59,7 +61,10 @@ const Contact: React.FC<ContactProps> = ({
         <Background src={images.mainContactBG} />
       </LeftWrapper>
       <FormWrapper>
-        <ContactForm onSubmit={onRequestSendMail} />
+        <ContactForm 
+          onSubmit={onRequestSendMail}
+          isSending={isSending}
+        />
       </FormWrapper>
     </Wrapper>
   );

@@ -2,10 +2,17 @@ import React from 'react';
 import Contact from './Contact';
 import { ContactType } from '../../form/ContactForm';
 import { useMutation } from '@apollo/client';
-import { SEND_MAIL } from '../../../gql/mutation/mail';
+import { SEND_CONTATCT_MAIL } from '../../../gql/mutation/mail';
 import { validChecker, emailRule, fillInputRule } from '../../../utils/rules';
 const ContactContainer: React.FC = () => {
-  const [sendMail] = useMutation(SEND_MAIL);
+  const [sendContactMail, { 
+   loading,
+  }] = useMutation(SEND_CONTATCT_MAIL, {
+    onCompleted(data) {
+      const { sendContactMail:result } = data;
+      alert(result.success ? 'Successfully sent your message!' : `An error occured, ${result.message}`)
+    }
+  });
 
   const onRequestSendMail = (data: ContactType) => {
     if(validChecker([
@@ -13,13 +20,15 @@ const ContactContainer: React.FC = () => {
       emailRule(data.email),
       fillInputRule(data.content),
     ])) {
-      sendMail({ variables: { ...data } });
+      sendContactMail({ variables: { ...data } });
     }
-    // TODO: error handing
   }
 
   return (
-    <Contact onRequestSendMail={onRequestSendMail} />
+    <Contact 
+      onRequestSendMail={onRequestSendMail}
+      isSending={loading}
+    />
   );
 }
 
