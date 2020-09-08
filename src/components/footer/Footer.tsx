@@ -17,7 +17,6 @@ const SocialIconsWrapper = styled.div`
 
 const Footer: React.FC = () => {
   const themeContext = useContext(ThemeContext);
-  console.log(`jb: Footer:React.FC -> themeContext`, themeContext);
 
   return (
     <Wrapper>

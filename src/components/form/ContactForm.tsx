@@ -17,7 +17,6 @@ export interface ContactFormProps {
 }
 
 const Wrapper = styled.form`
-  padding: 1rem;
   width: 100%;
 `;
 const ButtonWrapper = styled.div`

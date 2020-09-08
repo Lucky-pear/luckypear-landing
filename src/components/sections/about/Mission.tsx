@@ -9,9 +9,18 @@ const Wrapper = styled.div`
   padding: 4rem 2rem;
   padding-bottom: 0rem;
   text-align: center;
+
+  ${({ theme }) => theme.media.mobile`
+    padding: 4rem 1rem;
+    padding-bottom: 0rem;
+  `};
 `;
 const InfoWrapper = styled.div`
   width: 80%;
+
+  ${({ theme }) => theme.media.mobile`
+    width: 100%;
+  `};
 `;
 const Title = styled.div`
   font-family: ${({ theme }) => theme.font.Axis};
@@ -30,6 +39,10 @@ const Heading = styled(Title)`
 `;
 const Background = styled.img`
   width: 60%;
+
+  ${({ theme }) => theme.media.mobile`
+    width: 100%;
+  `};
 `;
 
 const Misson: React.FC = () => {

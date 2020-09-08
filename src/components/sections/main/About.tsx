@@ -8,6 +8,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
+
+  ${({ theme }) => theme.media.mobile`
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem 1rem;
+  `};
 `;
 const InfoWrapper = styled.div`
   flex: 1;
@@ -27,6 +33,11 @@ const Subtitle = styled.div`
 const ImageWrapper = styled.div`
   flex: 1;
   width: 50%;
+
+  ${({ theme }) => theme.media.mobile`
+    margin-top: 2rem;
+    width: 100%;
+  `};
 `;
 const Background = styled.img`
   width: 100%;

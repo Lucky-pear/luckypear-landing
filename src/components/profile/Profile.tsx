@@ -21,7 +21,6 @@ const Wrapper = styled.div<{ size: TSize }>`
   display: flex;
   flex-direction: ${props => props.size === 'big' ? 'column' : 'row'};
   align-items: center;
-  justify-content: center;
 `;
 const Image = styled.img<{ size: TSize }>`
   width: ${props => props.size === 'big' ? 144 : 92}px;

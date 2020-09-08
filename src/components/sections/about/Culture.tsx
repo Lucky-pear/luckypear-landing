@@ -9,9 +9,18 @@ const Wrapper = styled.div`
   padding: 8rem 2rem;
   text-align: center;
   background-color: ${({ theme }) => theme.color.lightGrey};
+
+  ${({ theme }) => theme.media.mobile`
+    padding: 8rem 1rem;
+    padding-bottom: 4rem;
+  `};
 `;
 const InnerWrapper = styled.div`
   width: 80%;
+
+  ${({ theme }) => theme.media.mobile`
+    width: 100%;
+  `};
 `;
 const Title = styled.div`
   font-family: ${({ theme }) => theme.font.Axis};
@@ -28,6 +37,10 @@ const Description = styled.div`
 const Heading = styled(Title)`
   font-size: 36px;
   margin-bottom: 2rem;
+
+  ${({ theme }) => theme.media.mobile`
+    margin-bottom: 3rem;
+  `};
 `;
 const MemberWrapper = styled.div`
   display: flex;
@@ -44,8 +57,17 @@ const AttendeeWrapper = styled.div`
   margin-top: 2rem;
 
   > * {
-   margin-right: 3rem; 
+   margin-right: 3rem;
   }
+
+  ${({ theme }) => theme.media.mobile`
+    flex-direction: column;
+
+    > * {
+      margin-right: unset;
+      margin-bottom: 2rem;
+    }
+  `};
 `;
 
 

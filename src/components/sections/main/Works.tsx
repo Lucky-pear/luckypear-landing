@@ -10,10 +10,14 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 6rem 0rem;
   background-color: ${({ theme }) => theme.color.lightGrey};
+
+  ${({ theme }) => theme.media.mobile`
+    padding: 4rem 1rem;
+  `};
 `;
 const Title = styled.div`
   font-family: ${({ theme }) => theme.font.Axis};
-  font-size: 32px;
+  font-size: 36px;
 `;
 const Subtitle = styled.div`
   font-family: ${({ theme }) => theme.font.Quicksand};
@@ -27,6 +31,16 @@ const WorkCardWrapper = styled.div`
   justify-content: space-around;
   width: 100%;
   margin-top: 4rem;
+
+  ${({ theme }) => theme.media.mobile`
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    > * {
+      margin-top: 1.5rem; 
+    }
+  `};
 `;
 
 const Works: React.FC<{ works:WorkType[] }> = ({
