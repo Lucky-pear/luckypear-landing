@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontFamily } from '../../../styles/fonts';
-import { Colors } from '../../../styles/colors';
 import images from '../../../assets/images';
 import { ContactForm, ContactType } from '../../form/ContactForm';
 
@@ -16,16 +14,16 @@ const Wrapper = styled.div`
   padding-bottom: 8rem;
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 48px;
-  color: ${Colors.darkGrey};
+  color: ${({ theme }) => theme.color.darkGrey};
   margin-bottom: 1rem;
 `;
 const Subtitle = styled.div`
-  font-family: ${FontFamily.Quicksand};
+  font-family: ${({ theme }) => theme.font.Quicksand};
   font-size: 24px;
   margin-bottom: 5rem;
-  color: ${Colors.grey};
+  color: ${({ theme }) => theme.color.grey};
 `;
 const FormWrapper = styled.div`
   flex: 1;

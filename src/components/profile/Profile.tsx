@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from '../../styles/colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Button } from '../buttons/Button';
@@ -36,11 +35,11 @@ const InfoWrapper = styled.div<{ size: TSize }>`
   margin-left: ${props => props.size === 'small' ? 1 : 0}rem;
 `;
 const Name = styled.div`
-  color: ${Colors.darkGrey};
+  color: ${({ theme }) => theme.color.darkGrey};
   font-weight: bold;
 `;
 const Position = styled.div`
-  color: ${Colors.grey};
+  color: ${({ theme }) => theme.color.grey};
   margin-top: 0.2rem;
 `;
 const SocialWrapper = styled.div`
@@ -49,7 +48,7 @@ const SocialWrapper = styled.div`
 
   > * {
     margin-right: 0.3rem; 
-    color: ${Colors.darkGrey};
+    color: ${({ theme }) => theme.color.darkGrey};
   }
 `;
 

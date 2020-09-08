@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from '../../../styles/colors';
-import { FontFamily } from '../../../styles/fonts';
 import Profile from '../../profile/Profile';
 
 const Wrapper = styled.div`
@@ -10,22 +8,22 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 8rem 2rem;
   text-align: center;
-  background-color: ${Colors.lightGrey};
+  background-color: ${({ theme }) => theme.color.lightGrey};
 `;
 const InnerWrapper = styled.div`
   width: 80%;
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 48px;
-  color: ${Colors.darkGrey};
+  color: ${({ theme }) => theme.color.darkGrey};
   margin-bottom: 1rem;
 `;
 const Description = styled.div`
-  font-family: ${FontFamily.Quicksand};
+  font-family: ${({ theme }) => theme.font.Quicksand};
   font-size: 20px;
   margin-bottom: 4rem;
-  color: ${Colors.grey};
+  color: ${({ theme }) => theme.color.grey};
 `;
 const Heading = styled(Title)`
   font-size: 36px;

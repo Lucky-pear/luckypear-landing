@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors, Shadows } from '../../styles/colors';
-import { FontFamily } from '../../styles/fonts';
 import { Link } from 'react-router-dom';
 import images from '../../assets/images';
 
@@ -15,8 +13,8 @@ const HeightManager = styled.div`
 const ContentWrapper = styled.header`
   position: fixed;
   z-index: 100;
-  background-color: ${Colors.white};
-  /* box-shadow: ${Shadows.underShadow}; */
+  background-color: ${({ theme }) => theme.color.white};
+  /* box-shadow: ${({ theme }) => theme.shadow.box}; */
   height: ${HEADER_HEIGHT}px !important;
   left: 0px !important;
   width: 100% !important;
@@ -29,9 +27,9 @@ const Icon = styled.img`
   height: 40px;
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 24px;
-  color: ${Colors.primary};
+  color: ${({ theme }) => theme.color.primary};
   margin-left: 0.5rem;
 `;
 

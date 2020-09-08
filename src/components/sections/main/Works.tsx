@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontFamily } from '../../../styles/fonts';
-import { Colors } from '../../../styles/colors';
 import WorkCard from '../../cards/WorkCard';
 import { WorkType } from '../../../@types/typed';
 
@@ -11,15 +9,15 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 6rem 0rem;
-  background-color: ${Colors.lightGrey};
+  background-color: ${({ theme }) => theme.color.lightGrey};
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 32px;
 `;
 const Subtitle = styled.div`
-  font-family: ${FontFamily.Quicksand};
-  color: ${Colors.darkGrey};
+  font-family: ${({ theme }) => theme.font.Quicksand};
+  color: ${({ theme }) => theme.color.darkGrey};
   font-size: 18px;
   text-align: center;
   margin-top: 1rem;

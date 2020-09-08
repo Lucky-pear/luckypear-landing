@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../../../assets/images';
-import { Colors } from '../../../styles/colors';
-import { FontFamily } from '../../../styles/fonts';
 import { ColorButton } from '../../buttons/ColorButton';
 import { Link } from 'react-router-dom';
 
@@ -15,16 +13,16 @@ const InfoWrapper = styled.div`
   flex: 1;
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 48px;
-  color: ${Colors.darkGrey};
+  color: ${({ theme }) => theme.color.darkGrey};
   margin-bottom: 0.5rem;
 `;
 const Subtitle = styled.div`
-  font-family: ${FontFamily.Quicksand};
+  font-family: ${({ theme }) => theme.font.Quicksand};
   font-size: 24px;
   margin-bottom: 2rem;
-  color: ${Colors.grey};
+  color: ${({ theme }) => theme.color.grey};
 `;
 const ImageWrapper = styled.div`
   flex: 1;

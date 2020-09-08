@@ -1,13 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../styles/colors';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Button } from '../buttons/Button';
 
 const Wrapper = styled.footer`
   width: 100%;
   padding: 2rem 1.5rem;
-  background-color: ${Colors.darkGrey};
-  color: ${Colors.white};
+  background-color: ${({ theme }) => theme.color.darkGrey};
+  color: ${({ theme }) => theme.color.white};
   display: flex;
   justify-content: space-between;
 `;
@@ -17,6 +16,9 @@ const SocialIconsWrapper = styled.div`
 `;
 
 const Footer: React.FC = () => {
+  const themeContext = useContext(ThemeContext);
+  console.log(`jb: Footer:React.FC -> themeContext`, themeContext);
+
   return (
     <Wrapper>
       <Copyright>
@@ -26,7 +28,7 @@ const Footer: React.FC = () => {
         <Button 
           link="https://github.com/Lucky-pear"
           style={{
-            color: Colors.white
+            color: themeContext.color.white
           }}
         >
           GitHub
