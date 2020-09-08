@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import images from '../../assets/images';
 import { NavButton } from '../buttons/NavButton';
+import { useInView } from 'react-intersection-observer';
 
 const HEADER_HEIGHT = 80;
 
@@ -10,15 +11,17 @@ const Wrapper = styled.div`
 const HeightManager = styled.div`
   height: ${HEADER_HEIGHT}px !important;
 `;
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.div<{ scrolled:boolean }>`
   position: fixed;
   z-index: 100;
-  /* box-shadow: ${({ theme }) => theme.shadow.box}; */
   height: ${HEADER_HEIGHT}px !important;
   left: 50%;
   transform: translateX(-50%);
   width: 100% !important;
-  background-color: ${({ theme }) => theme.color.white};
+  background-color: ${props => props.scrolled ? props.theme.color.white : props.theme.color.transparent};
+  box-shadow: ${props => props.scrolled ? props.theme.shadow.box : 'unset'};
+
+  transition: .3s box-shadow;
 `;
 
 const HeaderWrapper = styled.header`
@@ -41,9 +44,14 @@ const Title = styled.div`
 `;
 
 const Header: React.FC = () => {
+  const { ref, inView, entry } = useInView();
+
+  const isScrolled:boolean = entry !== undefined && !inView;
+
   return (
     <Wrapper>
-      <ContentWrapper>
+      <div ref={ref} />
+      <ContentWrapper scrolled={isScrolled}>
         <HeaderWrapper>
           <NavButton to="/">
             <Icon src={images.iconLogo} />
