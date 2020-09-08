@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontFamily } from '../../../styles/fonts';
-import { Colors } from '../../../styles/colors';
 import images from '../../../assets/images';
 import { ContactForm, ContactType } from '../../form/ContactForm';
 
@@ -10,36 +8,58 @@ export interface ContactProps {
   isSending?: boolean
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   padding: 4rem 2rem;
   padding-bottom: 8rem;
+
+  ${({ theme }) => theme.media.mobile`
+    padding: 4rem 1rem;
+    flex-direction: column;
+  `};
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 48px;
-  color: ${Colors.darkGrey};
+  color: ${({ theme }) => theme.color.darkGrey};
   margin-bottom: 1rem;
 `;
 const Subtitle = styled.div`
-  font-family: ${FontFamily.Quicksand};
+  font-family: ${({ theme }) => theme.font.Quicksand};
   font-size: 24px;
   margin-bottom: 5rem;
-  color: ${Colors.grey};
+  color: ${({ theme }) => theme.color.grey};
+
+  ${({ theme }) => theme.media.mobile`
+    margin-bottom: 3rem;
+  `};
 `;
 const FormWrapper = styled.div`
   flex: 1;
   margin-left: 4rem;
   display: flex;
   align-items: center;
+
+  ${({ theme }) => theme.media.mobile`
+    margin-left: unset;
+    margin-top: 3rem;
+  `};
 `;
-const LeftWrapper = styled.div`
+const ContentWrapper = styled.div`
   max-width: 50%;
   flex-grow: 1;
+
+  ${({ theme }) => theme.media.mobile`
+    max-width: unset;
+  `};
 `;
 const Background = styled.img`
   width: 100%;
   padding-right: 2rem;
+
+  ${({ theme }) => theme.media.mobile`
+    padding-right: unset;
+  `};
 `;
 
 const Contact: React.FC<ContactProps> = ({
@@ -48,7 +68,7 @@ const Contact: React.FC<ContactProps> = ({
 }) => {
   return (
     <Wrapper>
-      <LeftWrapper>
+      <ContentWrapper>
         <Title>
           Contact us
           </Title>
@@ -59,7 +79,7 @@ const Contact: React.FC<ContactProps> = ({
             Feel free for asking everything!
           </Subtitle>
         <Background src={images.mainContactBG} />
-      </LeftWrapper>
+      </ContentWrapper>
       <FormWrapper>
         <ContactForm 
           onSubmit={onRequestSendMail}

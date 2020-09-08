@@ -1,37 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../../../assets/images';
-import { Colors } from '../../../styles/colors';
-import { FontFamily } from '../../../styles/fonts';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
-  padding-bottom: 0rem;
   text-align: center;
 `;
 const InfoWrapper = styled.div`
   width: 80%;
+  padding: 4rem 2rem;
+  padding-bottom: 0rem;
+
+  ${({ theme }) => theme.media.mobile`
+    width: 100%;
+    padding: 4rem 1rem;
+    padding-bottom: 0rem;
+  `};
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 48px;
-  color: ${Colors.darkGrey};
+  color: ${({ theme }) => theme.color.darkGrey};
   margin-bottom: 1rem;
 `;
 const Description = styled.div`
-  font-family: ${FontFamily.Quicksand};
+  font-family: ${({ theme }) => theme.font.Quicksand};
   font-size: 20px;
   margin-bottom: 4rem;
-  color: ${Colors.grey};
+  color: ${({ theme }) => theme.color.grey};
 `;
 const Heading = styled(Title)`
   font-size: 36px;
 `;
 const Background = styled.img`
   width: 60%;
+
+  ${({ theme }) => theme.media.mobile`
+    width: 100%;
+  `};
 `;
 
 const Misson: React.FC = () => {

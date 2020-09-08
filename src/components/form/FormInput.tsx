@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
-import { Colors } from '../../styles/colors';
 import { RuleType } from '../../utils/rules';
 
 interface FormInputProps extends React.HTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
@@ -17,19 +16,19 @@ const Wrapper = styled.div`
 const Input = styled.input`
   width: 100%;
   padding: 1rem;
-  background-color: ${Colors.lightGrey};
+  background-color: ${({ theme }) => theme.color.lightGrey};
 `;
 const TextArea = styled.textarea`
   width: 100%;
   padding: 1rem;
   height: 20rem;
-  background-color: ${Colors.lightGrey};
+  background-color: ${({ theme }) => theme.color.lightGrey};
 `;
 const ErrorMessage = styled.div`
   margin-top: 4px;
   margin-left: 6px;
   font-size: 12px;
-  color: ${Colors.alert};
+  color: ${({ theme }) => theme.color.alert};
 `;
 
 

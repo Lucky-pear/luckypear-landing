@@ -1,7 +1,6 @@
 
 import React from 'react';
 import styled from 'styled-components'
-import { Colors } from '../../styles/colors';
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
   link?: string,
@@ -10,8 +9,9 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Wrapper = styled.div<{ loading: 1 | 0 }>`
+  width: fit-content;
   cursor: ${props => props.loading ? 'not-allowed' : 'pointer'};
-  color: ${Colors.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;
 
 export const Button: React.FC<ButtonProps> = (props) => {

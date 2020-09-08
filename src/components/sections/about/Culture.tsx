@@ -1,35 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from '../../../styles/colors';
-import { FontFamily } from '../../../styles/fonts';
 import Profile from '../../profile/Profile';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8rem 2rem;
   text-align: center;
-  background-color: ${Colors.lightGrey};
+  background-color: ${({ theme }) => theme.color.lightGrey};
 `;
-const InnerWrapper = styled.div`
+const InnerWrapper = styled.section`
   width: 80%;
+  padding: 8rem 2rem;
+
+  ${({ theme }) => theme.media.mobile`
+    padding: 4rem 1rem;
+    width: 100%;
+  `};
 `;
 const Title = styled.div`
-  font-family: ${FontFamily.Axis};
+  font-family: ${({ theme }) => theme.font.Axis};
   font-size: 48px;
-  color: ${Colors.darkGrey};
+  color: ${({ theme }) => theme.color.darkGrey};
   margin-bottom: 1rem;
 `;
 const Description = styled.div`
-  font-family: ${FontFamily.Quicksand};
+  font-family: ${({ theme }) => theme.font.Quicksand};
   font-size: 20px;
   margin-bottom: 4rem;
-  color: ${Colors.grey};
+  color: ${({ theme }) => theme.color.grey};
 `;
 const Heading = styled(Title)`
   font-size: 36px;
   margin-bottom: 2rem;
+
+  ${({ theme }) => theme.media.mobile`
+    margin-bottom: 3rem;
+  `};
 `;
 const MemberWrapper = styled.div`
   display: flex;
@@ -46,8 +53,17 @@ const AttendeeWrapper = styled.div`
   margin-top: 2rem;
 
   > * {
-   margin-right: 3rem; 
+   margin-right: 3rem;
   }
+
+  ${({ theme }) => theme.media.mobile`
+    flex-direction: column;
+
+    > * {
+      margin-right: unset;
+      margin-bottom: 2rem;
+    }
+  `};
 `;
 
 
