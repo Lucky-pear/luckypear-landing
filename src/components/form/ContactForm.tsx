@@ -13,10 +13,10 @@ export type ContactType = {
 
 export interface ContactFormProps {
   onSubmit: (data: ContactType) => void,
+  isSending?: boolean,
 }
 
 const Wrapper = styled.form`
-  padding: 1rem;
   width: 100%;
 `;
 const ButtonWrapper = styled.div`
@@ -26,7 +26,8 @@ const ButtonWrapper = styled.div`
 
 export const ContactForm: React.FC<ContactFormProps> = (props) => {
   const {
-    onSubmit
+    onSubmit,
+    isSending
   } = props;
   const [contactData, setContactData] = useState<ContactType>({
     name: '',
@@ -73,6 +74,7 @@ export const ContactForm: React.FC<ContactFormProps> = (props) => {
       <ButtonWrapper>
         <ColorButton
           onClick={_onSubmit}
+          loading={isSending}
         >
           Send
         </ColorButton>

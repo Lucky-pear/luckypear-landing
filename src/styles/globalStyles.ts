@@ -35,4 +35,10 @@ export default createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  header, footer, section {
+    /* max-width: 375px; */
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 `
