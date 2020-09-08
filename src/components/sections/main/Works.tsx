@@ -4,17 +4,19 @@ import WorkCard from '../../cards/WorkCard';
 import { WorkType } from '../../../@types/typed';
 
 const Wrapper = styled.div`
+  background-color: ${({ theme }) => theme.color.lightGrey};
+`;
+const InnerWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 6rem 0rem;
-  background-color: ${({ theme }) => theme.color.lightGrey};
 
   ${({ theme }) => theme.media.mobile`
     padding: 4rem 1rem;
   `};
-`;
+`
 const Title = styled.div`
   font-family: ${({ theme }) => theme.font.Axis};
   font-size: 36px;
@@ -43,21 +45,23 @@ const WorkCardWrapper = styled.div`
   `};
 `;
 
-const Works: React.FC<{ works:WorkType[] }> = ({
+const Works: React.FC<{ works: WorkType[] }> = ({
   works
 }) => {
   return (
     <Wrapper>
-      <Title>
-        Works
+      <InnerWrapper>
+        <Title>
+          Works
       </Title>
-      <Subtitle>
-        These are the works we are focusing now.<br/>
+        <Subtitle>
+          These are the works we are focusing now.<br />
         LUCKY PEAR aims to make a better place for developers.
       </Subtitle>
-      <WorkCardWrapper>
-        {works.map(work => <WorkCard key={work.title} {...work}/>)}
-      </WorkCardWrapper>
+        <WorkCardWrapper>
+          {works.map(work => <WorkCard key={work.title} {...work} />)}
+        </WorkCardWrapper>
+      </InnerWrapper>
     </Wrapper>
   );
 }

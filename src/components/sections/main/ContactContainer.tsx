@@ -4,6 +4,7 @@ import { ContactType } from '../../form/ContactForm';
 import { useMutation } from '@apollo/client';
 import { SEND_CONTATCT_MAIL } from '../../../gql/mutation/mail';
 import { validChecker, emailRule, fillInputRule } from '../../../utils/rules';
+
 const ContactContainer: React.FC = () => {
   const [sendContactMail, { 
    loading,

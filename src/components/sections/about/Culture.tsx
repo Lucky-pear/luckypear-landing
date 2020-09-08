@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     padding-bottom: 4rem;
   `};
 `;
-const InnerWrapper = styled.div`
+const InnerWrapper = styled.section`
   width: 80%;
 
   ${({ theme }) => theme.media.mobile`

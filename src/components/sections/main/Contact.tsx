@@ -8,7 +8,7 @@ export interface ContactProps {
   isSending?: boolean
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   padding: 4rem 2rem;
   padding-bottom: 8rem;

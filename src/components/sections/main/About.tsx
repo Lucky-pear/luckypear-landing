@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import images from '../../../assets/images';
 import { ColorButton } from '../../buttons/ColorButton';
-import { Link } from 'react-router-dom';
+import { NavButton } from '../../buttons/NavButton';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
@@ -55,11 +55,11 @@ const About: React.FC = () => {
           We write codes to write less codes.<br />
           Focus on your code, rest will be done by us.
         </Subtitle>
-        <Link to="/about">
+        <NavButton to="/about">
           <ColorButton>
             Learn more
           </ColorButton>
-        </Link>
+        </NavButton>
       </InfoWrapper>
       <ImageWrapper>
         <Background src={images.mainAboutBG} />

@@ -9,6 +9,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Wrapper = styled.div<{ loading: 1 | 0 }>`
+  width: fit-content;
   cursor: ${props => props.loading ? 'not-allowed' : 'pointer'};
   color: ${({ theme }) => theme.color.primary};
 `;
