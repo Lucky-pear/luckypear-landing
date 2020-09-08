@@ -6,19 +6,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8rem 2rem;
   text-align: center;
   background-color: ${({ theme }) => theme.color.lightGrey};
-
-  ${({ theme }) => theme.media.mobile`
-    padding: 8rem 1rem;
-    padding-bottom: 4rem;
-  `};
 `;
 const InnerWrapper = styled.section`
   width: 80%;
+  padding: 8rem 2rem;
 
   ${({ theme }) => theme.media.mobile`
+    padding: 4rem 1rem;
     width: 100%;
   `};
 `;

@@ -6,20 +6,17 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
-  padding-bottom: 0rem;
   text-align: center;
-
-  ${({ theme }) => theme.media.mobile`
-    padding: 4rem 1rem;
-    padding-bottom: 0rem;
-  `};
 `;
 const InfoWrapper = styled.div`
   width: 80%;
+  padding: 4rem 2rem;
+  padding-bottom: 0rem;
 
   ${({ theme }) => theme.media.mobile`
     width: 100%;
+    padding: 4rem 1rem;
+    padding-bottom: 0rem;
   `};
 `;
 const Title = styled.div`
