@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../buttons/Button';
 
 type TSize = 'big' | 'small'
@@ -14,7 +15,8 @@ export interface ProfileType {
 }
 export interface ISocial {
   github?: string,
-  linkedin?: string
+  linkedin?: string,
+  notion?: string,
 }
 
 const Wrapper = styled.div<{ size: TSize }>`
@@ -46,18 +48,21 @@ const SocialWrapper = styled.div`
   display: flex;
 
   > * {
-    margin-right: 0.3rem; 
+    margin-right: 0.3rem;
+    width: 1.2rem;
     color: ${({ theme }) => theme.color.darkGrey};
   }
 `;
 
-const Profile: React.FC<ProfileType> = ({
-  image,
-  name,
-  position,
-  size = 'big',
-  social = {}
-}) => {
+const Profile: React.FC<ProfileType> = (props) => {
+  const {
+    image,
+    name,
+    position,
+    size = 'big',
+    social = {}
+  } = props;
+
   return (
     <Wrapper size={size}>
       <Image size={size} src={image} />
@@ -74,6 +79,7 @@ const Profile: React.FC<ProfileType> = ({
             switch (key) {
               case 'github': icon = faGithub; break;
               case 'linkedin': icon = faLinkedin; break;
+              case 'notion': icon = faHome; break;
               default: return null;
             }
             return (
