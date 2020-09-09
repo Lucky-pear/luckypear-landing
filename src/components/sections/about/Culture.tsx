@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Profile from '../../profile/Profile';
+import { ProfileGroupType } from './CultureContainer';
 
 const Wrapper = styled.div`
   display: flex;
@@ -44,6 +45,8 @@ const MemberWrapper = styled.div`
   margin-top: 2rem;
   margin-bottom: 3rem;
 `;
+const GroupWrapper = styled.div`
+`;
 const GroupTitle = styled(Title)`
   font-size: 28px;
   text-align: left;
@@ -67,7 +70,13 @@ const AttendeeWrapper = styled.div`
 `;
 
 
-const Culture: React.FC = () => {
+const Culture: React.FC<{
+  profileGroup: ProfileGroupType
+}> = (props) => {
+  const {
+    profileGroup
+  } = props;
+
   return (
     <Wrapper>
       <InnerWrapper>
@@ -85,39 +94,22 @@ const Culture: React.FC = () => {
           Laboratory
         </GroupTitle>
         <MemberWrapper>
-          <Profile 
-            image={'https://avatars0.githubusercontent.com/u/6838787?s=460&u=b8f7e9bc8b08d78f192abae44dfc95a61377261c&v=4'}
-            name="JB Paul Yun"
-            position="Founder"
-            social={{
-              github: "https://github.com/yjb94",
-              linkedin: "https://www.linkedin.com/in/jaybe-yun-219448106/"
-            }}
-          />
+          {profileGroup.members.map((member, idx) =>
+            <Profile key={idx} {...member} />
+          )}
         </MemberWrapper>
-        <GroupTitle>
-          Study Group
-        </GroupTitle>
-        <AttendeeWrapper>
-          <Profile 
-            size="small"
-            image={'https://avatars3.githubusercontent.com/u/26808056?s=460&u=00bbcb932efe0a39a77a37772c8a8917184f60be&v=4'}
-            name="Juno Lee"
-            position="Attendee"
-            social={{
-              github: "https://github.com/juno7803" 
-            }}
-          />
-          <Profile 
-            size="small"
-            image={'https://avatars3.githubusercontent.com/u/49388937?s=460&u=ea1bc071d0af910354719944d2f3b53ba8e39c7d&v=4'}
-            name="Woo Jun Han"
-            position="Attendee"
-            social={{
-              github: "https://github.com/mrMirror21" 
-            }}
-          />
-        </AttendeeWrapper>
+        {profileGroup.groups.map((group, idx) =>
+          <GroupWrapper key={idx}>
+            <GroupTitle>
+              {group.title}
+            </GroupTitle>
+            <AttendeeWrapper>
+              {group.attendees.map((attendee, i) =>
+                <Profile key={i} {...attendee} />
+              )}
+            </AttendeeWrapper>
+          </GroupWrapper>
+        )}
       </InnerWrapper>
     </Wrapper>
   );

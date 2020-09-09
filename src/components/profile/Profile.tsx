@@ -83,7 +83,7 @@ const Profile: React.FC<ProfileType> = (props) => {
               default: return null;
             }
             return (
-              <Button link={value}>
+              <Button key={key} link={value}>
                 <FontAwesomeIcon icon={icon} />
               </Button>
             )
