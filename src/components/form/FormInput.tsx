@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components'
 import { RuleType } from '../../utils/rules';
 
@@ -40,17 +40,15 @@ export const FormInput: React.FC<FormInputProps> = (props) => {
   } = props;
 
   const [value, setValue] = useState(props.value);
-  const [ruleResult, setRuleResult] = useState<RuleType>({ valid: true, message: '' })
+  const ruleResult = useMemo<RuleType>(() => {
+    if(rule && value)
+      return rule(value)
+    return { valid: true, message: '' }
+  }, [rule, value])
 
   useEffect(() => {
     setValue(props.value);
   }, [props.value])
-
-  useEffect(() => {
-    if (rule && value) {
-      setRuleResult(rule(value));
-    }
-  }, [rule, value]);
 
   const _onChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValue(e.currentTarget.value);
