@@ -76,7 +76,7 @@ const Culture: React.FC<{
         <Title type="title">
           Our Culture
         </Title>
-        <Description type="subtitle" color="grey">
+        <Description type="subtitle" color="grey" size="medium">
           Culture is a notoriously difficult term to define. But in our values, people, teams, products and codes contains more value than it shows to be.
           We compose simply and contain more because believe that less code has more power.
         </Description>

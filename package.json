@@ -19,7 +19,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.2",
     "graphql": "^15.3.0",
-    "luckypear-ui": "^0.0.3-beta.1",
+    "luckypear-ui": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intersection-observer": "^8.28.2",
