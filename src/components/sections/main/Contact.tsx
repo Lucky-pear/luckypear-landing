@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import images from '../../../assets/images';
 import { ContactForm, ContactType } from '../../form/ContactForm';
+import { Text } from 'luckypear-ui';
 
 export interface ContactProps {
   onRequestSendMail: (data: ContactType) => void,
@@ -18,17 +19,12 @@ const Wrapper = styled.section`
     flex-direction: column;
   `};
 `;
-const Title = styled.div`
-  font-family: ${({ theme }) => theme.font.Axis};
-  font-size: 48px;
-  color: ${({ theme }) => theme.color.darkGrey};
+const Title = styled(Text)`
   margin-bottom: 1rem;
 `;
-const Subtitle = styled.div`
-  font-family: ${({ theme }) => theme.font.Quicksand};
+const Subtitle = styled(Text)`
   font-size: 24px;
   margin-bottom: 5rem;
-  color: ${({ theme }) => theme.color.grey};
 
   ${({ theme }) => theme.media.mobile`
     margin-bottom: 3rem;
@@ -69,15 +65,15 @@ const Contact: React.FC<ContactProps> = ({
   return (
     <Wrapper>
       <ContentWrapper>
-        <Title>
+        <Title type="title">
           Contact us
-          </Title>
-        <Subtitle>
+        </Title>
+        <Subtitle type="subtitle" color="grey">
           Want to be our member?<br />
-            Want to offer us a project?<br />
-            or... do you want us to walk your dog?<br />
-            Feel free for asking everything!
-          </Subtitle>
+          Want to offer us a project?<br />
+          or... do you want us to walk your dog?<br />
+          Feel free for asking everything!
+        </Subtitle>
         <Background src={images.mainContactBG} />
       </ContentWrapper>
       <FormWrapper>

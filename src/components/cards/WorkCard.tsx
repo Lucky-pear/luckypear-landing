@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { WorkType } from '../../@types/typed';
-import { Button } from '../buttons/Button';
+import { Button } from 'luckypear-ui';
+
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.color.white};
@@ -50,7 +51,7 @@ const WorkCard: React.FC<WorkType> = ({
       {description && <Description dangerouslySetInnerHTML={{ __html: description }} />}
       <Footer>
         {link ?
-          <Button link={link}>
+          <Button type="naked" href={link}>
             See more
           </Button>
           :

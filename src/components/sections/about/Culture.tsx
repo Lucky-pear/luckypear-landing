@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Profile from '../../profile/Profile';
 import { ProfileGroupType } from './CultureContainer';
+import { Text } from 'luckypear-ui';
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,20 +20,13 @@ const InnerWrapper = styled.section`
     width: 100%;
   `};
 `;
-const Title = styled.div`
-  font-family: ${({ theme }) => theme.font.Axis};
-  font-size: 48px;
-  color: ${({ theme }) => theme.color.darkGrey};
+const Title = styled(Text)`
   margin-bottom: 1rem;
 `;
-const Description = styled.div`
-  font-family: ${({ theme }) => theme.font.Quicksand};
-  font-size: 20px;
+const Description = styled(Text)`
   margin-bottom: 4rem;
-  color: ${({ theme }) => theme.color.grey};
 `;
-const Heading = styled(Title)`
-  font-size: 36px;
+const Heading = styled(Text)`
   margin-bottom: 2rem;
 
   ${({ theme }) => theme.media.mobile`
@@ -47,8 +41,7 @@ const MemberWrapper = styled.div`
 `;
 const GroupWrapper = styled.div`
 `;
-const GroupTitle = styled(Title)`
-  font-size: 28px;
+const GroupTitle = styled(Text)`
   text-align: left;
 `;
 const AttendeeWrapper = styled.div`
@@ -80,17 +73,17 @@ const Culture: React.FC<{
   return (
     <Wrapper>
       <InnerWrapper>
-        <Title>
+        <Title type="title">
           Our Culture
         </Title>
-        <Description>
+        <Description type="subtitle" color="grey" size="medium">
           Culture is a notoriously difficult term to define. But in our values, people, teams, products and codes contains more value than it shows to be.
           We compose simply and contain more because believe that less code has more power.
         </Description>
-        <Heading>
+        <Heading type="title">
           Members
         </Heading>
-        <GroupTitle>
+        <GroupTitle type="title" size="big">
           Laboratory
         </GroupTitle>
         <MemberWrapper>
@@ -100,7 +93,7 @@ const Culture: React.FC<{
         </MemberWrapper>
         {profileGroup.groups.map((group, idx) =>
           <GroupWrapper key={idx}>
-            <GroupTitle>
+            <GroupTitle type="title" size="big">
               {group.title}
             </GroupTitle>
             <AttendeeWrapper>

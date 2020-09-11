@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../../../assets/images';
-import { ColorButton } from '../../buttons/ColorButton';
-import { NavButton } from '../../buttons/NavButton';
+import { Text, Button } from 'luckypear-ui'
 
 const Wrapper = styled.section`
   display: flex;
@@ -18,17 +17,11 @@ const Wrapper = styled.section`
 const InfoWrapper = styled.div`
   flex: 1;
 `;
-const Title = styled.div`
-  font-family: ${({ theme }) => theme.font.Axis};
-  font-size: 48px;
-  color: ${({ theme }) => theme.color.darkGrey};
+const Title = styled(Text)`
   margin-bottom: 0.5rem;
 `;
-const Subtitle = styled.div`
-  font-family: ${({ theme }) => theme.font.Quicksand};
-  font-size: 24px;
+const Subtitle = styled(Text)`
   margin-bottom: 2rem;
-  color: ${({ theme }) => theme.color.grey};
 `;
 const ImageWrapper = styled.div`
   flex: 1;
@@ -43,23 +36,25 @@ const Background = styled.img`
   width: 100%;
 `;
 
-const About: React.FC = () => {
+const About: React.FC<{
+  onSeeMore: () => void
+}> = ({
+  onSeeMore
+}) => {
   return (
     <Wrapper>
       <InfoWrapper>
-        <Title>
+        <Title type="title">
           We support<br />
           lazy devlopers.
         </Title>
-        <Subtitle>
+        <Subtitle type="subtitle" color="grey">
           We write codes to write less codes.<br />
           Focus on your code, rest will be done by us.
         </Subtitle>
-        <NavButton to="/about">
-          <ColorButton>
-            Learn more
-          </ColorButton>
-        </NavButton>
+        <Button onClick={onSeeMore}>
+          Learn more
+        </Button>
       </InfoWrapper>
       <ImageWrapper>
         <Background src={images.mainAboutBG} />
