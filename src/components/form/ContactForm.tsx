@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 import { FormInput } from './FormInput';
 import { emailRule, fillInputRule } from '../../utils/rules';
-import { ColorButton } from '../buttons/ColorButton';
+import { Button } from 'luckypear-ui';
 
 export type ContactType = {
   name: string,
@@ -72,12 +72,12 @@ export const ContactForm: React.FC<ContactFormProps> = (props) => {
         rule={fillInputRule}
       />
       <ButtonWrapper>
-        <ColorButton
+        <Button
           onClick={_onSubmit}
-          loading={isSending}
+          state={isSending ? 'loading' : 'idle'}
         >
           Send
-        </ColorButton>
+        </Button>
       </ButtonWrapper>
     </Wrapper>
   )

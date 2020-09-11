@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import WorkCard from '../../cards/WorkCard';
 import { WorkType } from '../../../@types/typed';
+import { Text } from 'luckypear-ui';
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.color.lightGrey};
@@ -17,14 +18,7 @@ const InnerWrapper = styled.section`
     padding: 4rem 1rem;
   `};
 `
-const Title = styled.div`
-  font-family: ${({ theme }) => theme.font.Axis};
-  font-size: 36px;
-`;
-const Subtitle = styled.div`
-  font-family: ${({ theme }) => theme.font.Quicksand};
-  color: ${({ theme }) => theme.color.darkGrey};
-  font-size: 18px;
+const Subtitle = styled(Text)`
   text-align: center;
   margin-top: 1rem;
 `;
@@ -51,13 +45,13 @@ const Works: React.FC<{ works: WorkType[] }> = ({
   return (
     <Wrapper>
       <InnerWrapper>
-        <Title>
+        <Text type="title" size="large">
           Works
-      </Title>
-        <Subtitle>
+        </Text>
+        <Subtitle type="subtitle" size="medium">
           These are the works we are focusing now.<br />
-        LUCKY PEAR aims to make a better place for developers.
-      </Subtitle>
+          LUCKY PEAR aims to make a better place for developers.
+        </Subtitle>
         <WorkCardWrapper>
           {works.map(work => <WorkCard key={work.title} {...work} />)}
         </WorkCardWrapper>

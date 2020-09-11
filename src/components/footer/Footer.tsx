@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { Button } from '../buttons/Button';
+import React from 'react';
+import styled from 'styled-components';
+import { Button } from 'luckypear-ui';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -22,23 +22,20 @@ const SocialIconsWrapper = styled.div`
 `;
 
 const Footer: React.FC = () => {
-  const themeContext = useContext(ThemeContext);
-
   return (
     <Wrapper>
       <FooterWrapper>
         <Copyright>
           © 2020 Lucky Pear, Inc. All rights reserved
-      </Copyright>
+        </Copyright>
         <SocialIconsWrapper>
           <Button
-            link="https://github.com/Lucky-pear"
-            style={{
-              color: themeContext.color.white
-            }}
+            type="naked"
+            href="https://github.com/Lucky-pear"
+            color="white"
           >
             GitHub
-        </Button>
+          </Button>
         </SocialIconsWrapper>
       </FooterWrapper>
     </Wrapper>
