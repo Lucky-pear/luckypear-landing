@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../../../assets/images';
-import { ColorButton } from '../../buttons/ColorButton';
-import { NavButton } from '../../buttons/NavButton';
-import { Text } from 'luckypear-ui'
+import { Text, Button } from 'luckypear-ui'
+import { useHistory } from 'react-router-dom';
 
 const Wrapper = styled.section`
   display: flex;
@@ -38,7 +37,11 @@ const Background = styled.img`
   width: 100%;
 `;
 
-const About: React.FC = () => {
+const About: React.FC<{
+  onSeeMore: () => void
+}> = ({
+  onSeeMore
+}) => {
   return (
     <Wrapper>
       <InfoWrapper>
@@ -50,11 +53,9 @@ const About: React.FC = () => {
           We write codes to write less codes.<br />
           Focus on your code, rest will be done by us.
         </Subtitle>
-        <NavButton to="/about">
-          <ColorButton>
-            Learn more
-          </ColorButton>
-        </NavButton>
+        <Button onClick={onSeeMore}>
+          Learn more
+        </Button>
       </InfoWrapper>
       <ImageWrapper>
         <Background src={images.mainAboutBG} />

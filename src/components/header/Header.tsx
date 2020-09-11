@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import images from '../../assets/images';
-import { NavButton } from '../buttons/NavButton';
-import { useInView } from 'react-intersection-observer';
+import { Button } from 'luckypear-ui';
 
 const HEADER_HEIGHT = 80;
 
@@ -32,6 +31,12 @@ const HeaderWrapper = styled.header`
   `};
 `;
 
+// TODO: switch this to logo component
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const Icon = styled.img`
   width: 40px;
   height: 40px;
@@ -43,22 +48,27 @@ const Title = styled.div`
   margin-left: 0.5rem;
 `;
 
-const Header: React.FC = () => {
-  const { ref, inView, entry } = useInView();
+export interface HeaderProps {
+  isScrolled: boolean
+  onRequestToHome: () => void
+}
 
-  const isScrolled:boolean = entry !== undefined && !inView;
-
+const Header: React.FC<HeaderProps> = ({
+  isScrolled,
+  onRequestToHome
+}) => {
   return (
     <Wrapper>
-      <div ref={ref} />
       <ContentWrapper scrolled={isScrolled}>
         <HeaderWrapper>
-          <NavButton to="/">
-            <Icon src={images.iconLogo} />
-            <Title>
-              LUCKY PEAR
-            </Title>
-          </NavButton>
+          <Button type="naked" onClick={onRequestToHome}>
+            <LogoContainer>
+              <Icon src={images.iconLogo} />
+              <Title>
+                LUCKY PEAR
+              </Title>
+            </LogoContainer>
+          </Button>
         </HeaderWrapper>
       </ContentWrapper>
       <HeightManager />

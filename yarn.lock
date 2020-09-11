@@ -6892,10 +6892,10 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-luckypear-ui@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/luckypear-ui/-/luckypear-ui-1.0.1.tgz#c22b23f839b7a36af96687741340bc6791c8ed50"
-  integrity sha512-voapuJzTBkYB4NwFlMVF+tC4J0GDd+qlzxP62NWhkxB66ikzloB8Sb5PT4Qc1KVwW8X5I4YYIXexsMXuEmAjug==
+luckypear-ui@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/luckypear-ui/-/luckypear-ui-1.1.1.tgz#3bbd745aea3eced1699794048edbfc4364aee26c"
+  integrity sha512-SuVQCHR/3QnEF2CKFrpcIRWZ7YgoR4BGUUJW4FUzgx7ztN19ER9Ge7gHbgoJ7ht+E1o3JwxS4bckUCXLSJ+DzQ==
 
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"

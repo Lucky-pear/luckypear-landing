@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { Button } from '../buttons/Button';
+import { Button } from 'luckypear-ui';
 
 type TSize = 'big' | 'small'
 export interface ProfileType {
@@ -50,7 +50,6 @@ const SocialWrapper = styled.div`
   > * {
     margin-right: 0.3rem;
     width: 1.2rem;
-    color: ${({ theme }) => theme.color.darkGrey};
   }
 `;
 
@@ -83,7 +82,7 @@ const Profile: React.FC<ProfileType> = (props) => {
               default: return null;
             }
             return (
-              <Button key={key} link={value}>
+              <Button key={key} href={value} type="naked" color="darkGrey">
                 <FontAwesomeIcon icon={icon} />
               </Button>
             )
