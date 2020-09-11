@@ -83,7 +83,7 @@ const Culture: React.FC<{
         <Heading type="title">
           Members
         </Heading>
-        <GroupTitle type="title">
+        <GroupTitle type="title" size="big">
           Laboratory
         </GroupTitle>
         <MemberWrapper>
