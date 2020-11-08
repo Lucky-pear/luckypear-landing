@@ -16,47 +16,16 @@ canvas {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
-@-webkit-keyframes rotating {
-  from {
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotating {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-.rotating {
-  -webkit-animation: rotating 150s linear infinite;
-  -moz-animation: rotating 150s linear infinite;
-  -ms-animation: rotating 150s linear infinite;
-  -o-animation: rotating 150s linear infinite;
-  animation: rotating 150s linear infinite;
-}
-
 h1 {
   color: white;
   font-family: Goldman;
   margin-top: 20px;
-  margin-bottom: 180px;
+  margin-bottom: 80px;
+}
+h2 {
+  color: white;
+  font-family: Goldman;
+  margin-right: 8px;
 }
 
 .container {
@@ -70,4 +39,56 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+}
+
+.range-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+input[type="range"]{
+  -webkit-appearance:none;
+  width:160px;
+  height:20px;
+  background: linear-gradient(to right, #3572C4 0%, #3572C4 100%);
+  background-size:150px 10px;
+  background-position:center;
+  background-repeat:no-repeat;
+  overflow:hidden;
+  outline: none;
+}
+
+input[type="range"]:first-of-type{
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  background:#389FCF;
+  position:relative;
+  z-index:3;
+  box-shadow:0 0 5px 0 rgba(0,0,0,0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:after{
+  content:" ";
+  width:160px;
+  height:10px;
+  position:absolute;
+  z-index:1;
+  right:20px;
+  top:5px;
+  background: #ff5b32;
+  background: linear-gradient(to right, #38CFAC 1%, #35C47B 70%);
+}
+
+p{
+  width:100%;
+  text-align:center;
+  color:white;
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', Roboto, Arial, Sans-serif;
+  font-size:32px;
+  margin-top:30px;
 }
