@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Footer from './components/footer/Footer';
 import About from './routes/About';
 import Main from './routes/Main';
@@ -24,6 +24,13 @@ const App = () => {
         <Switch>
           <Route path="/about" component={About} />
           <Route path="/" component={Main} />
+          <Route path="/shredder" render={() => 
+            <Redirect
+              to={{
+                pathname: "./shredder/index.html"
+              }}
+            />}
+          />
         </Switch>
       </MainWrapper>
       <Footer />

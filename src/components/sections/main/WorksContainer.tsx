@@ -8,6 +8,11 @@ const works: WorkType[] = [
     description: `<b>Resume</b> helps you generate your resume using github.<br/>By clicking once, we automatically generate your career timelines, tech stacks, most used languages and more!`,
   },
   {
+    title: 'Shredder',
+    description: `<b>Shredder</b> is a project inspired by an artist sherding picture and uniforms into an art.`,
+    link: '/shredder'
+  },
+  {
     title: 'React study group',
     description: `Do you have passion to learn React?<br/>That's great! Join us!<br/>We offer some best practices for React starters`,
     link: 'https://github.com/orgs/Lucky-pear/teams/react-study-group'
