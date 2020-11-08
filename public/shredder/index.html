@@ -3,12 +3,16 @@
  <head>
   <meta charset="utf-8"/>
   <link rel="stylesheet" type="text/css" href="index.css" />
-  <script type="text/javascript" src="render.js"></script>
+  <script type="text/javascript" src="shredder.js"></script>
  </head>
  <body onload="init();">
   <div class="container">
     <h1>SHREDDER</h1>
-    <canvas id="canvas" class="rotating" width="540" height="540"></canvas>
+    <div class="range-container">
+      <h2>FORCE</h2>
+      <input type="range" min="2" max="10" value="6" class="range" id="slider">
+    </div>
+    <canvas id="canvas" width="540" height="540"></canvas>
   </div>
   </div>
  </body>
