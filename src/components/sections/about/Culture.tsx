@@ -40,6 +40,7 @@ const MemberWrapper = styled.div`
   margin-bottom: 3rem;
 `;
 const GroupWrapper = styled.div`
+  margin-top: 3rem;
 `;
 const GroupTitle = styled(Text)`
   text-align: left;

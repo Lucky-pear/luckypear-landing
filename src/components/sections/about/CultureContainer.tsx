@@ -4,10 +4,10 @@ import Culture from './Culture';
 
 export interface ProfileGroupType {
   members: ProfileType[]
-  groups: [{ 
+  groups: { 
     title: string, 
-    attendees: ProfileType[] 
-  }]
+    attendees: ProfileType[]
+  }[]
 }
 
 const profileGroup: ProfileGroupType = {
@@ -16,7 +16,7 @@ const profileGroup: ProfileGroupType = {
     name: 'JB Paul Yun',
     position: 'Founder',
     social: {
-      notion: "https://www.notion.so/Jong-Bae-Paul-Yun-84df22a244e244a0af392858a87f01ef",
+      blog: "https://www.notion.so/Jong-Bae-Paul-Yun-84df22a244e244a0af392858a87f01ef",
       github: "https://github.com/yjb94",
       linkedin: "https://www.linkedin.com/in/jaybe-yun-219448106/",
     }
@@ -29,7 +29,7 @@ const profileGroup: ProfileGroupType = {
       position: 'Attendee',
       size: 'small',
       social: {
-        notion: "https://junoflo.oopy.io/",
+        blog: "https://velog.io/@juno7803",
         github: "https://github.com/juno7803"
       }
     },{
@@ -39,6 +39,26 @@ const profileGroup: ProfileGroupType = {
       size: 'small',
       social: {
         github: "https://github.com/mrMirror21"
+      }
+    },{
+      image: 'https://avatars.githubusercontent.com/u/33307948?s=400&u=fe500c378bb09dc835813b5b7a582c96a37970d8&v=4',
+      name: 'Kyu Bum Jang',
+      position: 'Attendee',
+      size: 'small',
+      social: {
+        github: "https://github.com/JangKyuBum"
+      }
+    }]
+  }, {
+    title: 'Helper',
+    attendees: [{
+      image: 'https://avatars.githubusercontent.com/u/41426853?s=400&u=d1db5df6b6416c457819a3747e60127ccc150280&v=4',
+      name: 'Seo Hui Jo',
+      position: 'Back-end developer',
+      size: 'small',
+      social: {
+        blog: "https://ducktopia.tistory.com/",
+        github: "https://github.com/seohuiJo",
       }
     }]
   }]
