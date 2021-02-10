@@ -16,7 +16,7 @@ export interface ProfileType {
 export interface ISocial {
   github?: string,
   linkedin?: string,
-  notion?: string,
+  blog?: string,
 }
 
 const Wrapper = styled.div<{ size: TSize }>`
@@ -78,7 +78,7 @@ const Profile: React.FC<ProfileType> = (props) => {
             switch (key) {
               case 'github': icon = faGithub; break;
               case 'linkedin': icon = faLinkedin; break;
-              case 'notion': icon = faHome; break;
+              case 'blog': icon = faHome; break;
               default: return null;
             }
             return (
